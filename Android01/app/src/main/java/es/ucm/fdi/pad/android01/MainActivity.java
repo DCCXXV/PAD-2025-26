@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.v(MainActivityTAG, "onCreate: Actividad inicializada (VERBOSE)");
+        Log.v(MainActivityTAG, "onCreate: Actividad inicializada");
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         numero2 = findViewById(R.id.editNumero2);
         suma = findViewById(R.id.suma);
 
-        Log.d(MainActivityTAG, "initViews: Vistas encontradas e inicializadas (DEBUG)");
+        Log.d(MainActivityTAG, "initViews: Vistas encontradas e inicializadas");
 
     }
     private void listenerBoton(){
@@ -51,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
             String num2=numero2.getText().toString();
 
             if(num1.isEmpty() && num2.isEmpty()){
-                Log.w(MainActivityTAG, "listenerBoton: Campos de números vacíos. No se realizará la suma (WARNING)");
+                Toast.makeText(this, "Por favor, ingresa ambos números", Toast.LENGTH_SHORT).show();
+                Log.w(MainActivityTAG, "listenerBoton: Campos de números vacíos. No se realizará la suma");
             }
             if(!num1.isEmpty() || !num2.isEmpty()){
                 try{
@@ -66,12 +68,10 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("resultado", resultado);
                     startActivity(intent);
                 }catch (NumberFormatException e) {
-
-                    Log.e(MainActivityTAG, "listenerBoton: Error de formato de número. Revisar entrada. (ERROR)", e);
+                    Log.e(MainActivityTAG, "listenerBoton: Error de formato de número. Revisar entrada.", e);
+                    Toast.makeText(this, "Número inválido", Toast.LENGTH_SHORT).show();
                 }
-
             }
-
         });
     }
 }
