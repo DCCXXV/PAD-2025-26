@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Android01</string>
+    <string name="introduce_el_segundo_numero">Introduce el segundo número</string>
+    <string name="introduce_el_primer_numero">Introduce el primer número</string>
+    <string name="calcular_suma">+</string>
+    <string name="textoVisible">Resultado:</string>
+    <string name="back">Atrás</string>
+</resources>
