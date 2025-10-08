@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/result"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B3F4FF">
+
+    <ImageView
+        android:id="@+id/nube_resultado"
+        android:layout_width="378dp"
+        android:layout_height="258dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.405"
+        app:srcCompat="@drawable/pngtree_white_cloud_png_image_4719526_removebg_preview" />
+
+    <TextView
+        android:id="@+id/suma_resultado"
+        android:layout_width="388dp"
+        android:layout_height="178dp"
+        android:layout_marginBottom="14dp"
+        android:fontFamily="casual"
+        android:text="@string/este_es_el_resultado"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/nube_resultado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="275dp"
+        android:layout_height="389dp"
+        android:rotation="50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nube_resultado"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/_07_3070790_adventuretime_gunter_finn_jake_gunter_adventure_time_transparent_removebg_preview" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="276dp"
+        android:layout_height="127dp"
+        android:text="@string/resultado"
+        android:textColor="#050505"
+        android:textSize="96sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/nube_resultado"
+        app:layout_constraintEnd_toEndOf="@+id/nube_resultado"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="@+id/nube_resultado"
+        app:layout_constraintTop_toTopOf="@+id/nube_resultado"
+        app:layout_constraintVertical_bias="0.511" />
+</androidx.constraintlayout.widget.ConstraintLayout>

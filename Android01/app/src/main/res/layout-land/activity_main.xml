@@ -5,82 +5,143 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#91BDAC"
-    android:padding="20dp"
+    android:background="#A6F1FD"
+    android:backgroundTint="#A7F3FF"
     tools:context=".MainActivity">
 
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="592dp"
-        android:layout_height="352dp"
-        android:layout_margin="20dp"
-        app:cardCornerRadius="25dp"
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="1141dp"
+        android:layout_height="716dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/prisoners_of_love__1_" />
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="235dp"
+        android:layout_height="110dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/pngtree_white_cloud_png_image_4719526_removebg_preview" />
 
-            <EditText
-                android:id="@+id/editNumero1"
-                android:layout_width="250dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="125dp"
-                android:layout_marginTop="96dp"
-                android:layout_marginBottom="54dp"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/introduce_el_primer_numero"
-                android:inputType="numberDecimal"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/editNumero2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="222dp"
+        android:layout_height="114dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36"
+        app:srcCompat="@drawable/pngtree_white_cloud_png_image_4719526_removebg_preview" />
 
-            <EditText
-                android:id="@+id/editNumero2"
-                android:layout_width="250dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="125dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="85dp"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/introduce_el_segundo_numero"
-                android:inputType="numberDecimal"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editNumero1" />
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="214dp"
+        android:layout_height="179dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/_07_3070790_adventuretime_gunter_finn_jake_gunter_adventure_time_transparent_removebg_preview" />
 
-            <Button
-                android:id="@+id/suma"
-                android:layout_width="115dp"
-                android:layout_height="115dp"
-                android:layout_marginStart="49dp"
-                android:layout_marginTop="119dp"
-                android:layout_marginEnd="53dp"
-                android:layout_marginBottom="118dp"
-                android:backgroundTint="#3CE0B4"
-                android:elegantTextHeight="true"
-                android:ellipsize="start"
-                android:scaleX="1"
-                android:scaleY="1"
-                android:text="@string/calcular_suma"
-                android:textColor="#000000"
-                android:textColorLink="@color/white"
-                android:textSize="70sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/editNumero1"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="71dp"
+        android:layout_height="73dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.803"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.763"
+        app:srcCompat="@drawable/_07_3070790_adventuretime_gunter_finn_jake_gunter_adventure_time_transparent_removebg_preview" />
 
-    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/Text1"
+        android:layout_width="417dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#000000"
+        android:fontFamily="monospace"
+        android:text="@string/suma_los_numeros"
+        android:textColor="#F44336"
+        android:textSize="34sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal"
+        android:layout_width="234dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="@string/introduce_un_numero"
+        android:inputType="numberDecimal"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal2"
+        android:layout_width="236dp"
+        android:layout_height="90dp"
+        android:autofillHints=""
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="@string/introduce_otro_numero"
+        android:inputType="numberDecimal"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="103dp"
+        android:layout_height="105dp"
+        android:backgroundTint="#00C4FF"
+        android:text="@string/suma"
+        android:textColor="#020202"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447"
+        app:strokeColor="#000000"
+        app:strokeWidth="5dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

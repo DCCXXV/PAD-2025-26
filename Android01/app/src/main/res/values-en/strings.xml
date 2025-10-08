@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Android01</string>
-    <string name="introduce_el_segundo_numero">Enter the second number</string>
-    <string name="introduce_el_primer_numero">Enter the first number</string>
-    <string name="calcular_suma">+</string>
-    <string name="textoVisible">Result:</string>
-    <string name="back">Back</string>
+    <string name="introduce_un_numero">Enter a number</string>
+    <string name="suma_los_numeros">Add the numbers!</string>
+    <string name="introduce_otro_numero">Enter another number</string>
+    <string name="suma">+</string>
+    <string name="fondo_reino_de_hielo">background ice kingdom</string>
+    <string name="este_es_el_resultado">This is the result!</string>
+    <string name="resultado">result</string>
 </resources>

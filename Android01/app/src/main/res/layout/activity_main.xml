@@ -5,87 +5,144 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#91BDAC"
-    android:padding="20dp"
+    android:background="#A7F3FF"
+    android:backgroundTint="#B3F3FF"
     tools:context=".MainActivity">
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:cardCornerRadius="25dp"
-        android:layout_margin="20dp"
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="717dp"
+        android:layout_height="1008dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.571"
+        app:srcCompat="@drawable/prisoners_of_love__2_" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="230dp"
+        android:layout_height="109dp"
+        android:background="#00070707"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Text1"
+        app:layout_constraintVertical_bias="0.6"
+        app:srcCompat="@drawable/pngtree_white_cloud_png_image_4719526_removebg_preview" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="222dp"
+        android:layout_height="114dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.015"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/pngtree_white_cloud_png_image_4719526_removebg_preview" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="368dp"
+        android:layout_height="346dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.932"
+        app:srcCompat="@drawable/_07_3070790_adventuretime_gunter_finn_jake_gunter_adventure_time_transparent_removebg_preview" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="71dp"
+        android:layout_height="73dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/_07_3070790_adventuretime_gunter_finn_jake_gunter_adventure_time_transparent_removebg_preview" />
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/Text1"
+        android:layout_width="378dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#000000"
+        android:fontFamily="monospace"
+        android:text="@string/suma_los_numeros"
+        android:textColor="#F44336"
+        android:textSize="34sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.372" />
 
-            <EditText
-                android:id="@+id/editNumero1"
-                android:layout_width="250dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="116dp"
-                android:layout_marginEnd="45dp"
-                android:layout_marginBottom="30dp"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/introduce_el_primer_numero"
-                android:inputType="numberDecimal"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/editNumero2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/editTextNumberDecimal"
+        android:layout_width="234dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="136dp"
+        android:autofillHints=""
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="@string/introduce_un_numero"
+        android:inputType="numberDecimal"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/editNumero2"
-                android:layout_width="250dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="45dp"
-                android:layout_marginBottom="89dp"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/introduce_el_segundo_numero"
-                android:inputType="numberDecimal"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/suma"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editNumero1" />
+    <EditText
+        android:id="@+id/editTextNumberDecimal2"
+        android:layout_width="236dp"
+        android:layout_height="90dp"
+        android:autofillHints=""
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="@string/introduce_otro_numero"
+        android:inputType="numberDecimal"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal"
+        app:layout_constraintVertical_bias="0.043" />
 
-            <Button
-                android:id="@+id/suma"
-                android:layout_width="115dp"
-                android:layout_height="115dp"
-                android:layout_marginStart="100dp"
-                android:layout_marginEnd="100dp"
-                android:layout_marginBottom="100dp"
-                android:backgroundTint="#3CE0B4"
-                android:elegantTextHeight="true"
-                android:ellipsize="start"
-                android:scaleX="1"
-                android:scaleY="1"
-                android:text="@string/calcular_suma"
-                android:textColor="#000000"
-                android:textColorLink="@color/white"
-                android:textSize="70sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editNumero2" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="103dp"
+        android:layout_height="105dp"
+        android:backgroundTint="#00C4FF"
+        android:text="@string/suma"
+        android:textColor="#020202"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.883"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.276"
+        app:strokeColor="#000000"
+        app:strokeWidth="5dp" />
 
-    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
