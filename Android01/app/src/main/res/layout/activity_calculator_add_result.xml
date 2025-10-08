@@ -31,9 +31,11 @@
                 android:layout_marginStart="134dp"
                 android:layout_marginTop="328dp"
                 android:layout_marginEnd="134dp"
+                android:layout_marginBottom="72dp"
                 android:text="@string/textoVisible"
                 android:textColorLink="#EDDCDC"
                 android:textSize="34sp"
+                app:layout_constraintBottom_toTopOf="@+id/button3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -43,6 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="123dp"
+                android:layout_marginTop="72dp"
                 android:layout_marginEnd="124dp"
                 android:layout_marginBottom="324dp"
                 android:backgroundTint="#3CE0B4"
@@ -52,7 +55,8 @@
                 android:textSize="34sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
