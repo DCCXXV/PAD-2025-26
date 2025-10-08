@@ -14,12 +14,16 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    private static final String MainActivityTAG = "CALCULATOR_APP_LOG";
     private EditText numero1, numero2;
     private Button suma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Log.v(MainActivityTAG, "onCreate: Actividad inicializada (VERBOSE)");
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -37,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         numero2 = findViewById(R.id.editNumero2);
         suma = findViewById(R.id.suma);
 
-        Log.d("Main activity", "initViews: Vistas inicializadas");
+        Log.d(MainActivityTAG, "initViews: Vistas encontradas e inicializadas (DEBUG)");
 
     }
     private void listenerBoton(){
@@ -46,19 +50,26 @@ public class MainActivity extends AppCompatActivity {
             String num1=numero1.getText().toString();
             String num2=numero2.getText().toString();
 
+            if(num1.isEmpty() && num2.isEmpty()){
+                Log.w(MainActivityTAG, "listenerBoton: Campos de números vacíos. No se realizará la suma (WARNING)");
+            }
             if(!num1.isEmpty() || !num2.isEmpty()){
-                double n1 = Double.parseDouble(num1);
-                double n2 = Double.parseDouble(num2);
+                try{
+                    double n1 = Double.parseDouble(num1);
+                    double n2 = Double.parseDouble(num2);
 
-                CalculatorAdd calculator = new CalculatorAdd();
-                double resultado = calculator.addNumbers(n1,n2);
+                    CalculatorAdd calculator = new CalculatorAdd();
+                    double resultado = calculator.addNumbers(n1,n2);
 
+                    Intent intent = new Intent(MainActivity.this, CalculatorAddResultActivity.class);
 
+                    intent.putExtra("resultado", resultado);
+                    startActivity(intent);
+                }catch (NumberFormatException e) {
 
-                Intent intent = new Intent(MainActivity.this, CalculatorAddResultActivity.class);
+                    Log.e(MainActivityTAG, "listenerBoton: Error de formato de número. Revisar entrada. (ERROR)", e);
+                }
 
-                intent.putExtra("resultado", resultado);
-                startActivity(intent);
             }
 
         });

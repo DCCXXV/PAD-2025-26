@@ -15,11 +15,14 @@ import androidx.core.view.WindowInsetsCompat;
 public class CalculatorAddResultActivity extends AppCompatActivity {
 
 
+    private static final String ResultActivityTAG = "CALCULATOR_RESULT_LOG";
     private TextView resultado;
     private Button volver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Log.v(ResultActivityTAG, "onCreate: Actividad de resultados iniciada (VERBOSE)");
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_calculator_add_result);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -30,6 +33,11 @@ public class CalculatorAddResultActivity extends AppCompatActivity {
 
         resultado = findViewById(R.id.textView);
         double result = getIntent().getDoubleExtra("resultado",0);
+        Log.d(ResultActivityTAG, "onCreate: Resultado recibido de Intent: " + result + " (DEBUG)");
+        if (result == 0 && !getIntent().hasExtra("resultado")) {
+
+            Log.w(ResultActivityTAG, "onCreate: El Intent no contenía el extra 'resultado' o era 0. Usando valor por defecto (WARNING)");
+        }
 
         resultado.setText("" + result);
 
@@ -37,7 +45,7 @@ public class CalculatorAddResultActivity extends AppCompatActivity {
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // ¡Esta es la línea clave! Cierra la actividad actual y vuelve a la anterior.
+
                 finish();
             }
         });
