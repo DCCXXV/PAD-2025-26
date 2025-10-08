@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Android01</string>
-    <string name="introduce_el_segundo_numero">Enter the second number</string>
-    <string name="introduce_el_primer_numero">Enter the first number</string>
-    <string name="calcular_suma">+</string>
-    <string name="textoVisible">Result:</string>
-    <string name="back">Back</string>
+    <string name="hint_num1">Enter a number</string>
+    <string name="hint_num2">Enter another number</string>
+    <string name="btn_sumar">SUM</string>
+    <string name="btn_volver">Back</string>
 </resources>

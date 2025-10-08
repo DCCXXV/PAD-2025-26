@@ -5,45 +5,34 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import java.text.DecimalFormat;
 
 public class CalculatorAddResultActivity extends AppCompatActivity {
 
+    private static final String TAG = "ResultActivity";
 
-    private TextView resultado;
-    private Button volver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        Log.v(TAG, "onCreate iniciado");
         setContentView(R.layout.activity_calculator_add_result);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
-        resultado = findViewById(R.id.textView);
-        double result = getIntent().getDoubleExtra("resultado",0);
+        TextView textViewResult = findViewById(R.id.textViewResult);
+        Button buttonBack = findViewById(R.id.buttonBack);
 
-        resultado.setText("" + result);
+        double result = getIntent().getDoubleExtra("RESULT", 0.0);
+        Log.i(TAG, "Resultado recibido del Intent: " + result);
 
-        volver = findViewById(R.id.button3);
-        volver.setOnClickListener(new View.OnClickListener() {
+        DecimalFormat df = new DecimalFormat("0.#####");
+        textViewResult.setText(df.format(result));
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // ¡Esta es la línea clave! Cierra la actividad actual y vuelve a la anterior.
+                Log.d(TAG, "onClick: Volviendo a MainActivity");
                 finish();
             }
         });
-
     }
-
-
-
 }
