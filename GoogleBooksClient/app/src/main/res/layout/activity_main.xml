@@ -16,6 +16,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Search name" />
+
+        <EditText
+            android:id="@+id/authorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Name" />
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
 
@@ -24,25 +39,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:hint="Search name"
-        app:layout_anchor="@id/search_bar" />
+        app:layout_anchor="@id/search_bar">
+
+    </com.google.android.material.search.SearchView>
 
     <RadioGroup
+        android:id="@+id/optGroup"
         android:layout_width="183dp"
         android:layout_height="wrap_content"
         app:layout_anchor="@+id/search_view"
         app:layout_anchorGravity="center">
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/bookRadio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Autor" />
+            android:text="Libro" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/magazineRadio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Titulo" />
+            android:text="Revista" />
+
+        <RadioButton
+            android:id="@+id/allRadio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ambos" />
+
     </RadioGroup>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

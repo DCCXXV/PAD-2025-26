@@ -18,27 +18,43 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
 public class BookLoader extends AsyncTaskLoader<List<String>>{
 
-    final String BASE_URL = "https://www.googleapis.com/books/v1/volumes?";
+    final String BASE_URL = "https://www.googleapis.com/books/v1/volumes?q=";
     final String QUERY_PARAM = "q";
     final String MAX_RESULTS = "20";
     final String PRINT_TYPE = "all"; // revistas y libros
-    final String KEY = "AIzaSyAmBxdY4CEab7FoFgjQr9KNcWr7wBvPo1I";
+    final String KEY = BuildConfig.API_KEY;
 
     private String queryString;
     private HttpURLConnection conn;
 
-    public BookLoader(@NonNull Context context, String author) {
+    public BookLoader(@NonNull Context context) {
         super(context);
-        queryString = "inauthor:\"" + author + "\"";
+        //queryString = "inauthor:\"" + author + "\"";
     }
+
+    /// NADA DE ESTA CLASE DUDO QUE FUNCIONE !!!
 
     @Nullable
     @Override
     public List<String> loadInBackground() {
 
         List<String> data = new ArrayList<String>();
+
+
+
+        return data;
+    }
+
+    @Override
+    protected void onStartLoading() {
+        super.onStartLoading();
+        forceLoad();
+    }
+
+    public String getBookInfoJson (String queryString, String printType){
 
         // cargar los datos desde la red
         try {
@@ -66,9 +82,10 @@ public class BookLoader extends AsyncTaskLoader<List<String>>{
 
             InputStream response = conn.getInputStream();
             String resultString = convertIsToString(response);
+            return resultString;
 
         }catch (Exception e){
-
+            e.printStackTrace();
         } finally {
             conn.disconnect();
             /*if (is != null) {
@@ -76,7 +93,7 @@ public class BookLoader extends AsyncTaskLoader<List<String>>{
             }*/
         }
 
-        return data;
+       return null;
     }
 
     // transformar input en un string
@@ -97,5 +114,6 @@ public class BookLoader extends AsyncTaskLoader<List<String>>{
 
         return builder.toString();
     }
+
 
 }
