@@ -61,9 +61,12 @@ public class MainActivity extends AppCompatActivity {
             loaderManager.initLoader(BOOK_LOADER_ID,null,
                     bookLoaderCallbacks);
         }
+        
+    }
 
-        /// TO DO: en queryString concatenar autores y titulo de DOS cajas de texto
+    public void searchBooks(View view){
 
+        // se obtiene la opcion de los radio buttons para printType
         RadioGroup group = findViewById(R.id.printTypeRadioGroup);
         int checkedId = group.getCheckedRadioButtonId();
 
@@ -76,9 +79,9 @@ public class MainActivity extends AppCompatActivity {
 
             printType = "all";
         }
-    }
 
-    public void searchBooks(View view){
+        /// TO DO: en queryString concatenar autores y titulo de DOS cajas de texto
+
         Bundle queryBundle = new Bundle();
         queryBundle.putString(BookLoaderCallbacks.EXTRA_QUERY, queryString);
         queryBundle.putString(BookLoaderCallbacks.EXTRA_PRINT_TYPE, printType);
