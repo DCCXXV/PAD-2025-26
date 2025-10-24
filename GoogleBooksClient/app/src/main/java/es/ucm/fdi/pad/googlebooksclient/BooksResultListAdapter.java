@@ -45,5 +45,6 @@ public class BooksResultListAdapter extends RecyclerView.Adapter<BooksResultList
 
     public void setBooksData(List<Bookinfo> data){
         mBooksData = (ArrayList<Bookinfo>) data;
+        notifyDataSetChanged();
     }
 }

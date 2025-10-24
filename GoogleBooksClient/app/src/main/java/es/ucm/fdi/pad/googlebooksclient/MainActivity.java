@@ -88,8 +88,6 @@ public class MainActivity extends AppCompatActivity {
 
     void updateBooksResultList(List<Bookinfo> books){
         BooksResultListAdapter adapter = new BooksResultListAdapter();
-
         adapter.setBooksData(books);
-        adapter.notifyDataSetChanged();
     }
 }
