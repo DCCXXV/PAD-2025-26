@@ -15,6 +15,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.loader.app.LoaderManager;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText author;
@@ -82,5 +84,12 @@ public class MainActivity extends AppCompatActivity {
         queryBundle.putString(BookLoaderCallbacks.EXTRA_PRINT_TYPE, printType);
         LoaderManager.getInstance(this).restartLoader(BOOK_LOADER_ID,
                 queryBundle, bookLoaderCallbacks);
+    }
+
+    void updateBooksResultList(List<Bookinfo> books){
+        BooksResultListAdapter adapter = new BooksResultListAdapter();
+
+        adapter.setBooksData(books);
+        adapter.notifyDataSetChanged();
     }
 }
