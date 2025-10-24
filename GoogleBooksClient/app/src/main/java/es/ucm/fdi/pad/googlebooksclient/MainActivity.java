@@ -62,16 +62,16 @@ public class MainActivity extends AppCompatActivity {
 
         /// TO DO: en queryString concatenar autores y titulo de DOS cajas de texto
 
-        group = findViewById(R.id.optGroup);
+        RadioGroup group = findViewById(R.id.printTypeRadioGroup);
         int checkedId = group.getCheckedRadioButtonId();
 
         String printType;
-        if (checkedId == R.id.bookRadio)
+        if (checkedId == R.id.radioBooks) {
             printType = "books";
-        else if (checkedId == R.id.magazineRadio) {
+        } else if (checkedId == R.id.radioMagazines) {
             printType = "magazines";
-        }
-        else{
+        } else {
+
             printType = "all";
         }
     }
