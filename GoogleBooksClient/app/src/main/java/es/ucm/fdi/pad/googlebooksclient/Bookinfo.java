@@ -26,8 +26,6 @@ public class Bookinfo {
         this.infoLink = infoLink;
     }
 
-    //Getters
-
     public String getTitle(){
         return title;
     }
@@ -53,7 +51,6 @@ public class Bookinfo {
         try {
             JSONObject root = new JSONObject(jsonResponseString);
 
-            // Si no hay "items", es que no hay resultados
             if (!root.has("items")) {
                 Log.w(LOG_TAG, "El JSON no contiene 'items'");
                 return books;
@@ -61,15 +58,12 @@ public class Bookinfo {
 
             JSONArray itemsArray = root.getJSONArray("items");
 
-            // Recorrer todos los libros/revistas en el array "items"
             for (int i = 0; i < itemsArray.length(); i++) {
                 JSONObject bookItem = itemsArray.getJSONObject(i);
                 JSONObject volumeInfo = bookItem.getJSONObject("volumeInfo");
 
-                // 1. Obtener el Título
                 String title = volumeInfo.optString("title");
 
-                // 2. Obtener Autores (si existen) [cite: 9]
                 String authors = null;
                 if (volumeInfo.has("authors")) {
                     JSONArray authorsArray = volumeInfo.getJSONArray("authors");
@@ -83,7 +77,6 @@ public class Bookinfo {
                     authors = authorsBuilder.toString();
                 }
 
-                // 3. Obtener la URL
                 URL infoLink = null;
                 String urlString = volumeInfo.optString("infoLink");
                 if (!urlString.isEmpty()) {
@@ -94,7 +87,6 @@ public class Bookinfo {
                     }
                 }
 
-                // Añadir el libro a la lista
                 if (!title.isEmpty()) {
                     books.add(new Bookinfo(title, authors, infoLink));
                 }
