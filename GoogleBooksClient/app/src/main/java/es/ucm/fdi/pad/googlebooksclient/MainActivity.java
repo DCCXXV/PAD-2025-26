@@ -3,9 +3,7 @@ package es.ucm.fdi.pad.googlebooksclient;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -45,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements OnBookClickListen
 
         mRecyclerView = findViewById(R.id.recyclerView);
 
-        mAdapter = new BookResultListAdapter(new ArrayList<Bookinfo>(), this);
+        mAdapter = new BookResultListAdapter(new ArrayList<BookInfo>(), this);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -98,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements OnBookClickListen
     /**
      * Método para recibir los resultados del BookLoaderCallbacks
      */
-    public void updateBooksResultList(List<Bookinfo> books) {
+    public void updateBooksResultList(List<BookInfo> books) {
         mStatusTextView.setVisibility(View.VISIBLE);
 
         if (books != null && !books.isEmpty()) {
@@ -111,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements OnBookClickListen
     }
 
     @Override
-    public void onBookClick(Bookinfo book) {
+    public void onBookClick(BookInfo book) {
         if (book.getInfoLink() != null) {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(book.getInfoLink().toString()));
 

@@ -17,7 +17,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-public class BookLoader extends AsyncTaskLoader<List<Bookinfo>> {
+public class BookLoader extends AsyncTaskLoader<List<BookInfo>> {
 
     private static final String LOG_TAG = BookLoader.class.getSimpleName();
 
@@ -34,7 +34,7 @@ public class BookLoader extends AsyncTaskLoader<List<Bookinfo>> {
 
     @Nullable
     @Override
-    public List<Bookinfo> loadInBackground() {
+    public List<BookInfo> loadInBackground() {
         String jsonResult = null;
         try {
             jsonResult = getBookInfoJson();
@@ -47,7 +47,7 @@ public class BookLoader extends AsyncTaskLoader<List<Bookinfo>> {
             return null;
         }
 
-        return Bookinfo.fromJsonResponse(jsonResult);
+        return BookInfo.fromJsonResponse(jsonResult);
     }
 
     @Override

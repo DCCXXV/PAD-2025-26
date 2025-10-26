@@ -1,6 +1,5 @@
 package es.ucm.fdi.pad.googlebooksclient;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,7 +9,7 @@ import androidx.loader.content.Loader;
 
 import java.util.List;
 
-public class BookLoaderCallbacks implements LoaderManager.LoaderCallbacks<List<Bookinfo>> {
+public class BookLoaderCallbacks implements LoaderManager.LoaderCallbacks<List<BookInfo>> {
 
     private final MainActivity mMainActivity;
 
@@ -23,7 +22,7 @@ public class BookLoaderCallbacks implements LoaderManager.LoaderCallbacks<List<B
 
     @NonNull
     @Override
-    public Loader<List<Bookinfo>> onCreateLoader(int id, @Nullable Bundle args) {
+    public Loader<List<BookInfo>> onCreateLoader(int id, @Nullable Bundle args) {
         String queryString = null;
         String printType = "all";
 
@@ -36,14 +35,14 @@ public class BookLoaderCallbacks implements LoaderManager.LoaderCallbacks<List<B
     }
 
     @Override
-    public void onLoadFinished(@NonNull Loader<List<Bookinfo>> loader, List<Bookinfo> books) {
+    public void onLoadFinished(@NonNull Loader<List<BookInfo>> loader, List<BookInfo> books) {
         if (mMainActivity != null) {
             mMainActivity.updateBooksResultList(books);
         }
     }
 
     @Override
-    public void onLoaderReset(@NonNull Loader<List<Bookinfo>> loader) {
+    public void onLoaderReset(@NonNull Loader<List<BookInfo>> loader) {
         if (mMainActivity != null) {
             mMainActivity.updateBooksResultList(null);
         }

@@ -11,16 +11,16 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bookinfo {
+public class BookInfo {
 
-    private static final String LOG_TAG = Bookinfo.class.getSimpleName();
+    private static final String LOG_TAG = BookInfo.class.getSimpleName();
 
     private final String title;
     private final String authors;
     private final URL infoLink;
 
 
-    public Bookinfo(String title, String authors, URL infoLink) {
+    public BookInfo(String title, String authors, URL infoLink) {
         this.title = title;
         this.authors = authors;
         this.infoLink = infoLink;
@@ -41,8 +41,8 @@ public class Bookinfo {
     }
 
 
-    public static List<Bookinfo> fromJsonResponse(String jsonResponseString) {
-        ArrayList<Bookinfo> books = new ArrayList<>();
+    public static List<BookInfo> fromJsonResponse(String jsonResponseString) {
+        ArrayList<BookInfo> books = new ArrayList<>();
 
         if (jsonResponseString == null || jsonResponseString.isEmpty()) {
             return books;
@@ -88,7 +88,7 @@ public class Bookinfo {
                 }
 
                 if (!title.isEmpty()) {
-                    books.add(new Bookinfo(title, authors, infoLink));
+                    books.add(new BookInfo(title, authors, infoLink));
                 }
             }
 

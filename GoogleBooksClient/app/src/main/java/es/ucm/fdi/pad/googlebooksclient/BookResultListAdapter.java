@@ -1,7 +1,5 @@
 package es.ucm.fdi.pad.googlebooksclient;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,13 +13,13 @@ import java.util.List;
 
 public class BookResultListAdapter extends RecyclerView.Adapter<BookResultListAdapter.ViewHolder> {
 
-    private List<Bookinfo> mBooksData;
+    private List<BookInfo> mBooksData;
     private final OnBookClickListener mListener;
 
     /**
      * Constructor modificado para recibir el Listener.
      */
-    public BookResultListAdapter(List<Bookinfo> data, OnBookClickListener listener) {
+    public BookResultListAdapter(List<BookInfo> data, OnBookClickListener listener) {
         this.mBooksData = data;
         this.mListener = listener;
     }
@@ -32,7 +30,7 @@ public class BookResultListAdapter extends RecyclerView.Adapter<BookResultListAd
         private final TextView infoLinkTextView;
 
         private final OnBookClickListener listener;
-        private Bookinfo currentBook;
+        private BookInfo currentBook;
 
         public ViewHolder(View itemView, OnBookClickListener listener) {
             super(itemView);
@@ -45,7 +43,7 @@ public class BookResultListAdapter extends RecyclerView.Adapter<BookResultListAd
             itemView.setOnClickListener(this);
         }
 
-        public void bind(Bookinfo book) {
+        public void bind(BookInfo book) {
             this.currentBook = book;
         }
 
@@ -66,7 +64,7 @@ public class BookResultListAdapter extends RecyclerView.Adapter<BookResultListAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Bookinfo currentBook = mBooksData.get(position);
+        BookInfo currentBook = mBooksData.get(position);
 
         holder.bind(currentBook);
 
@@ -91,7 +89,7 @@ public class BookResultListAdapter extends RecyclerView.Adapter<BookResultListAd
     public int getItemCount() {
         return mBooksData.size();
     }
-    public void setBooksData(List<Bookinfo> data) {
+    public void setBooksData(List<BookInfo> data) {
         this.mBooksData = (data != null) ? data : new ArrayList<>();
         notifyDataSetChanged();
     }
