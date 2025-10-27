@@ -72,7 +72,7 @@ public class BookResultListAdapter extends RecyclerView.Adapter<BookResultListAd
 
         String authors = currentBook.getAuthors();
         if (authors != null && !authors.isEmpty()) {
-            holder.authorsTextView.setText("Autor(es): " + authors);
+            holder.authorsTextView.setText(holder.itemView.getContext().getString(R.string.autor_es) + authors);
             holder.authorsTextView.setVisibility(View.VISIBLE);
         } else {
             holder.authorsTextView.setVisibility(View.GONE);

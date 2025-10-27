@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">GoogleBooksClient</string>
+    <string name="introduce_el_titulo">Introduce el título</string>
+    <string name="introduce_el_autor_solo_libros">Introduce el autor (solo libros)</string>
+    <string name="ambos">Ambos</string>
+    <string name="solo_libros">Solo Libros</string>
+    <string name="solo_revistas">Solo Revistas</string>
+    <string name="buscar">Buscar</string>
+    <string name="autor_es">Autor(es): </string>
+    <string name="introduce_un_t_tulo_y_o_autor_para_buscar">¡Introduce un título y/o autor para buscar!</string>
+    <string name="cargando">Cargando...</string>
+    <string name="resultados">"Resultados: "</string>
+    <string name="no_se_han_encontrado_resultados">No se han encontrado resultados</string>
+    <string name="este_libro_no_tiene_enlace_disponible">Este libro no tiene enlace disponible.</string>
 </resources>

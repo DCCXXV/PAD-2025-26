@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GoogleBooksClient</string>
+    <string name="introduce_el_titulo">Add the title</string>
+    <string name="introduce_el_autor_solo_libros">Add the author (only books)</string>
+    <string name="ambos">Both</string>
+    <string name="solo_libros">Only Books</string>
+    <string name="solo_revistas">Only Magazines</string>
+    <string name="buscar">Search</string>
+    <string name="autor_es">Author(s): </string>
+    <string name="introduce_un_t_tulo_y_o_autor_para_buscar">Add a title and/or author to search!</string>
+    <string name="cargando">Loading...</string>
+    <string name="resultados">"Results: "</string>
+    <string name="no_se_han_encontrado_resultados">Results not founded</string>
+    <string name="este_libro_no_tiene_enlace_disponible">This book have no link available</string>
+</resources>

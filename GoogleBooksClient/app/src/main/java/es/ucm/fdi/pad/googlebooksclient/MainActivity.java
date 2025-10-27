@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements OnBookClickListen
         }
 
         if (queryString.isEmpty()) {
-            mStatusTextView.setText("¡Introduce un título y/o autor para buscar!");
+            mStatusTextView.setText(R.string.introduce_un_t_tulo_y_o_autor_para_buscar);
             return;
         }
 
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements OnBookClickListen
         queryBundle.putString(BookLoaderCallbacks.EXTRA_QUERY, queryString);
         queryBundle.putString(BookLoaderCallbacks.EXTRA_PRINT_TYPE, printType);
 
-        mStatusTextView.setText("Cargando...");
+        mStatusTextView.setText(R.string.cargando);
         mStatusTextView.setVisibility(View.VISIBLE);
         mAdapter.setBooksData(new ArrayList<>());
 
@@ -100,10 +100,10 @@ public class MainActivity extends AppCompatActivity implements OnBookClickListen
         mStatusTextView.setVisibility(View.VISIBLE);
 
         if (books != null && !books.isEmpty()) {
-            mStatusTextView.setText("Resultados: " + books.size());
+            mStatusTextView.setText(getString(R.string.resultados) + books.size());
             mAdapter.setBooksData(books);
         } else {
-            mStatusTextView.setText("No se han encontrado resultados");
+            mStatusTextView.setText(R.string.no_se_han_encontrado_resultados);
             mAdapter.setBooksData(new ArrayList<>());
         }
     }
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements OnBookClickListen
 
             startActivity(intent);
         } else {
-            mStatusTextView.setText("Este libro no tiene enlace disponible.");
+            mStatusTextView.setText(R.string.este_libro_no_tiene_enlace_disponible);
         }
     }
 }
